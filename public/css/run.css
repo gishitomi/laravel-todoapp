@@ -1,0 +1,41 @@
+@charset "UTF-8";
+.task-header {
+    display: flex;
+    justify-content: space-between;
+    width: 90%;
+    height: 30px;
+}
+
+.task-header-left {
+    display: flex;
+    justify-content: space-around;
+    width: 20%;
+}
+
+.task-header-right {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+}
+
+.task-title {
+    margin: 0;
+}
+
+.run-btn {
+    color: tomato;
+}
+
+#timer {
+    font-size: 100px;
+}
+
+#start,
+#stop,
+#done {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}

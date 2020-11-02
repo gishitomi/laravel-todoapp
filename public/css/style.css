@@ -1,0 +1,158 @@
+@charset "UTF-8";
+body,
+html {
+    height: 100%;
+    font-family: "Gill Sans", sans-serif;
+}
+
+.container-wrapper {
+    height: 100%;
+}
+
+header {
+    color: white;
+    background-color: tomato;
+}
+
+.header-title {
+    font-size: 30px;
+}
+
+.todo-contents {
+    display: flex;
+    height: 92%;
+}
+
+.sidebar {
+    width: 20%;
+    position: relative;
+}
+
+.main-contents {
+    background-color: whitesmoke;
+    width: 80%;
+}
+
+.add-project {
+    font-size: 20px;
+    color: tomato;
+    padding: 10px 0;
+    padding-left: 15px;
+    border-top: 1px rgb(209, 209, 209) solid;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+.add-project:visited,
+.add-project:hover,
+.add-project:active {
+    color: tomato;
+    text-decoration: none;
+}
+
+.project-list {
+    position: absolute;
+    margin: 20px;
+}
+
+.project-list li {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.done-tasks {
+    width: 90%;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    margin: 40px auto;
+    color: gray;
+    margin-bottom: 20px;
+}
+
+.counter {
+    text-align: center;
+}
+
+.task-counter {
+    margin: 10px 0;
+}
+
+p,
+h5 {
+    margin: 0;
+}
+
+.add-task {
+    width: 90%;
+    color: gray;
+    background-color: white;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
+
+.task-title {
+    margin-top: 30px;
+}
+
+.tasks {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.task {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 10px;
+    margin: 10px 0;
+    height: 48px;
+}
+
+.task-left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 15%;
+}
+
+.title,
+.status span,
+.deadline {
+    display: flex;
+    align-items: center;
+}
+
+.status span {
+    height: 100%;
+}
+
+.task-right {
+    display: flex;
+    justify-content: space-around;
+    width: 45%;
+}
+
+.importance {
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+}
+
+.small {
+    background-color: lightgreen;
+}
+
+.large {
+    background-color: red;
+}
+
+.medium {
+    background-color: orange;
+}
+
+a:hover {
+    text-decoration: none;
+}

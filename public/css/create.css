@@ -1,0 +1,152 @@
+body {
+    background-color: whitesmoke;
+}
+
+.create-card {
+    background-color: white;
+    height: 300px;
+    margin-top: 200px;
+    position: relative;
+}
+
+.large-card {
+    margin-top: 50px;
+    height: 600px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    height: 100%;
+}
+
+.input-box {
+    margin-top: 30px;
+}
+
+.input-box,
+.btn-box {
+    width: 80%;
+}
+
+.btn-box {
+    text-align: center;
+}
+
+.back-btn,
+.btn-enter {
+    width: 30%;
+}
+
+label {
+    font-size: 16px;
+    font-weight: bold;
+    color: tomato;
+}
+
+#title,
+#due_date {
+    font-size: 20px;
+    width: 100%;
+    border: none;
+    outline: none;
+    padding-bottom: 8px;
+    box-sizing: border-box;
+    /*横幅の解釈をpadding, borderまでとする*/
+}
+
+.text_underline {
+    position: relative;
+    /*.text_underline::beforeの親要素*/
+    border-top: 1px solid #c2c2c2;
+    /*text3の下線*/
+}
+
+
+/*共通のstyle*/
+
+.text_underline::before,
+.text_underline::after {
+    position: absolute;
+    bottom: 0px;
+    /*中央配置*/
+    width: 0px;
+    /*アニメーションで0pxから50%に*/
+    height: 1px;
+    /*高さ*/
+    content: '';
+    background-color: tomato;
+    /*アニメーションの色*/
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+
+/*左から右へのアニメーション*/
+
+.text_underline::before {
+    position: absolute;
+    left: 0px;
+    /*左配置 ここright: 0px;にすると右から左のアニメーション*/
+    bottom: 0px;
+    /*左配置*/
+    width: 0px;
+    /*アニメーションで0pxから100%に*/
+    height: 1px;
+    /*高さ*/
+    content: '';
+    background-color: tomato;
+    /*アニメーションの色*/
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+}
+
+#title:focus+.text_underline::before,
+#due_date:focus+.text_underline::before {
+    width: 100%;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.error-box {
+    position: absolute;
+    width: 90%;
+    left: 6%;
+    z-index: 1;
+}
+
+.label-title {
+    margin-top: 30px;
+}
+
+.importance-btns {
+    margin-left: 60px;
+}
+
+.low {
+    color: lightgreen;
+    font-size: 20px;
+    margin-left: 5px;
+}
+
+.high {
+    color: red;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+.mid {
+    color: orange;
+    font-size: 20px;
+    margin-right: 20px;
+    margin-left: 5px;
+}
+
+select {
+    margin-left: 50px;
+}
