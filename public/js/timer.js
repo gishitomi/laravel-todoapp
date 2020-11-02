@@ -6,7 +6,7 @@
 var timer = document.getElementById('timer');
 var start = document.getElementById('start');
 var stop = document.getElementById('stop');
-var reset = document.getElementById('stop');
+var reset = document.getElementById('reset');
 
 // クリック時の時間を保持するための変数定義
 var startTime;
@@ -78,4 +78,13 @@ stop.addEventListener('click', function() {
 
     // タイマーを再開させたら0から始まってしまうので、それを防ぐ
     timeToadd += Date.now() - startTime;
+})
+
+// resetボタンのクリックイベント
+reset.addEventListener('click', function() {
+    elapsedTime = 0;
+
+    timeToadd = 0;
+
+    updateTimetText();
 })
