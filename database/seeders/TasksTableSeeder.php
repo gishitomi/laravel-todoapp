@@ -24,7 +24,7 @@ class TasksTableSeeder extends Seeder
                 'priority' => $num,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
-
+                'task_time' => '00:00:00',
             ]);
         }
     }

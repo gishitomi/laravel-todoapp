@@ -13,9 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// ホームページ
+Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 
 // インデックス
 Route::get('/projects/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');

@@ -15,6 +15,9 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run()
     {
+        // usersテーブルの1行目を取得
+        $user = DB::table('users')->first();
+
         $titles = ['旅行', 'アルバイト', '勉強'];
 
         foreach($titles as $item) {
@@ -22,6 +25,7 @@ class ProjectsTableSeeder extends Seeder
                 'title' => $item,
                 'created_at' => Carbon::now(),
                 'updated_at' => Carbon::now(),
+                'user_id' => $user->id,
             ]);
         }
     }
