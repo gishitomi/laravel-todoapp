@@ -38,6 +38,11 @@
                         <div class="importance {{$task->priority_class}}"></div>
                         <h5 class="title">{{$task->title}}</h5>
                     </div>
+                    <!-- タスク完了時間 -->
+                    <!-- 状態が完了であれば表示 -->
+                    @if($task->status === 3)
+                    <p>{{$task->task_time}}</p>
+                    @endif
                     <div class="task-right">
                         <!-- 状態 -->
                         <a href="{{route('tasks.run', ['id' => $task->id])}}" class="status">

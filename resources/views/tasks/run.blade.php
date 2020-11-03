@@ -46,13 +46,13 @@
             </div>
         </div>
         <div class="timer-box">
-            <div id="timer">00:00</div>
+            <div id="timer" name="timer">00:00:00</div>
         </div>
         <div class="btn-box">
             <a href="{{route('tasks.index')}}">
                 <button type="button" class="btn btn-outline-primary back-btn">戻る</button>
             </a>
-            <button type="submit" class="btn btn-outline-danger btn-enter">終了</button>
+            <button type="button" class="btn btn-outline-danger btn-enter">終了</button>
         </div>
 
         <!-- Modal -->
@@ -66,11 +66,12 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        ...
+                        タスク完了までにかかった時間が記録されます。
+                        <input type="hidden" id="task_time" name="timer">
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">キャンセル</button>
+                        <button type="submit" class="btn btn-primary">完了</button>
                     </div>
                 </div>
             </div>
@@ -81,5 +82,6 @@
 @endsection
 
 @section('script')
+<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <script src="{{asset('js/timer.js')}}"></script>
 @endsection

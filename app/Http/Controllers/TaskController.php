@@ -77,4 +77,16 @@ class TaskController extends Controller
             'task' => $task,
         ]);
     }
+    public function run(int $id, Request $request)
+    {
+        // 選択中のタスクを取得
+        $task = Task::find($id);
+
+        $task->task_time = $request->timer;
+        $task->status = 3;
+
+        $task->save();
+
+        return redirect()->route('tasks.index');
+    }
 }
