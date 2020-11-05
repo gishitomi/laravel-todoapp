@@ -40,6 +40,7 @@ class TaskController extends Controller
         $task->due_date = $request->due_date;
         $task->priority = $request->importance;
         $task->project_id = $request->project_id;
+        $task->task_time = '00:00:00';
 
         $task->save();
 

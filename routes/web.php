@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,6 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 // ホームページ
 Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
+
+// 会員登録・ログイン・ログアウト・パスワード再設定の各機能で必要なルーティング設定をすべて定義
+Auth::routes();
+
 
 // インデックス
 Route::get('/projects/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');
@@ -33,3 +38,4 @@ Route::post('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@edit');
 // タスク実行
 Route::get('/tasks/{id}/run', 'App\Http\Controllers\TaskController@showRunForm')->name('tasks.run');
 Route::post('/tasks/{id}/run', 'App\Http\Controllers\TaskController@run');
+

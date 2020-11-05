@@ -20,7 +20,7 @@
 
 .message {
     position: absolute;
-    top: 25%;
+    top: 20%;
     left: 4%;
     font-weight: bold;
     color: rgb(255, 255, 255);
@@ -30,15 +30,18 @@
     font-size: 60px;
 }
 
+.form-box {
+    position: absolute;
+    top: 30%;
+    left: 60%;
+}
+
 #form {
-    width: 500px;
+    width: 400px;
     margin: 30px auto;
     padding: 20px;
-    border: 1px solid #555;
-    position: absolute;
-    top: 40%;
-    left: 60%;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
+    border-radius: 3%;
 }
 
 form p {
@@ -56,11 +59,25 @@ form p {
 
 input[type="email"],
 input[type="password"] {
-    width: 300px;
+    width: 350px;
     padding: 4px;
     font-size: 14px;
 }
 
 .submit {
     text-align: right;
+}
+
+.login-box {
+    display: flex;
+    justify-content: center;
+}
+
+.login-btn {
+    width: 90%;
+}
+
+.new {
+    display: flex;
+    justify-content: space-around;
 }
