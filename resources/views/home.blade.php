@@ -1,5 +1,14 @@
 @extends('layout')
 @section('content')
-<a href="{{route('login')}}">ログイン</a>
-<a href="{{route('register')}}">新規登録</a>
-@endsection
+<div class="todo-contents">
+    <nav class="sidebar">
+        <ul class="project-list">
+        </ul>
+        <a href="{{route('projects.create')}}" class="add-project">
+            <span>+</span>プロジェクトの追加
+        </a>
+    </nav>
+    <section class="main-contents new-create">
+
+    </section>
+</div @endsection

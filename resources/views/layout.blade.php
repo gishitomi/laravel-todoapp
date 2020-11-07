@@ -15,6 +15,24 @@
     <div class="container-wrapper">
         <header class="navbar">
             <h1 class="header-title">ManageToDo</h1>
+            <div class="header-right">
+                @if(Auth::check())
+                <p>ようこそ、{{Auth::user()->name}}さん</p>
+                <form action="{{route('logout')}}" method="post">
+                    @csrf
+                    <button type="submit" class="btn btn-dark">ログアウト</button>
+                </form>
+                @else
+                <a href="{{route('login')}}">
+                    <button class="btn btn-primary">
+                        ログイン
+                    </button>
+                </a>
+                <a href="{{route('register')}}">
+                    <button class="btn btn-success">新規登録</button>
+                </a>
+                @endif
+            </div>
         </header>
         @yield('content')
     </div>

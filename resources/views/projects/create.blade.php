@@ -21,7 +21,7 @@
             <div class="text_underline"></div>
         </div>
         <div class="btn-box">
-            <a href="{{route('tasks.index')}}">
+            <a href="javascript:history.back()">
                 <button type="button" class="btn btn-outline-primary back-btn">戻る</button>
             </a>
             <button type="submit" class="btn btn-outline-danger btn-enter">決定</button>

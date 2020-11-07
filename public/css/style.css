@@ -12,10 +12,28 @@ html {
 header {
     color: white;
     background-color: tomato;
+    display: flex;
+    justify-content: space-around;
 }
 
 .header-title {
     font-size: 30px;
+}
+
+.header-right {
+    display: flex;
+    justify-content: space-around;
+}
+
+.header-right p {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    margin-right: 20px;
+}
+
+.header-right .btn-primary {
+    margin-right: 20px;
 }
 
 .todo-contents {
@@ -155,4 +173,20 @@ h5 {
 
 a:hover {
     text-decoration: none;
+}
+
+.new-create {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-msg {
+    text-align: center;
+}
+
+.create-msg p {
+    margin-bottom: 30px;
+    color: gray;
+    font-size: 20px;
 }

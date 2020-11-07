@@ -7,13 +7,14 @@ use App\Models\Task;
 use App\Http\Requests\CreateTask;
 use App\Http\Requests\EditTask;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TaskController extends Controller
 {
     public function index()
     {
-        // 全てのプロジェクトを取得
-        $projects = Project::all();
+        // ユーザーの全てのプロジェクトを取得
+        $projects = Auth::user()->projects()->get();
 
         // 全てのタスクを取得
         $tasks = Task::all();

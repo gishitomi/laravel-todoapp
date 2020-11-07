@@ -9,6 +9,7 @@ class HomeController extends Controller
 {
     public function index()
     {
-        return view('home');
+        // タスク一覧にリダイレクトする
+        return redirect()->route('tasks.index');
     }
 }

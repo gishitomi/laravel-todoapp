@@ -23,6 +23,13 @@
                 <form action="{{route('login')}}" method="post" class="form-box">
                     @csrf
                     <div id="form">
+                    @if($errors->any())
+                    <div class="alert alert-danger">
+                        @foreach($errors->all() as $message)
+                            <p>{{$message}}</p>
+                        @endforeach
+                    </div>
+                    @endif
                         <p>メールアドレス</p>
                         <p class="mail"> <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus></p>
                         @error('email')
@@ -38,6 +45,9 @@
                         </span>
                         @enderror
                         <p class="check"><input type="checkbox" name="checkbox" />パスワードを保存</p>
+                        <div class="text-center">
+                            <a href="{{ route('password.request') }}">パスワードを忘れてしまった場合はこちら</a>
+                        </div>
 
 
                         <div class="login-box">
@@ -55,6 +65,7 @@
 
                     </div>
                 </form>
+
             </div>
         </div>
     </div>

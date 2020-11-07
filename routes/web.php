@@ -21,6 +21,8 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 Auth::routes();
 
 
+// ページ認証...ログインしていないとアクセスできないようにする
+Route::group(['middleware' => 'auth'], function() {
 // インデックス
 Route::get('/projects/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');
 // プロジェクト作成
@@ -38,4 +40,4 @@ Route::post('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@edit');
 // タスク実行
 Route::get('/tasks/{id}/run', 'App\Http\Controllers\TaskController@showRunForm')->name('tasks.run');
 Route::post('/tasks/{id}/run', 'App\Http\Controllers\TaskController@run');
-
+});
