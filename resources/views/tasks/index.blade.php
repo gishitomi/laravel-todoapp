@@ -21,6 +21,8 @@
         </div>
         @else
         <div class="main-page">
+            <!-- タスク数と未完了のタスク数を表示 -->
+            <!-- 今は未実装 -->
             <!-- <div class="done-tasks">
                 <div class="task-counter">
                     <h4 class="counter">{{$tasks->where('project_id', )->count()}}</h4>

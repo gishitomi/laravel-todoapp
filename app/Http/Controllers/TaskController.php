@@ -10,6 +10,8 @@ use App\Http\Requests\EditTask;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
+use function PHPUnit\Framework\isNull;
+
 class TaskController extends Controller
 {
     public function index()
@@ -57,6 +59,12 @@ class TaskController extends Controller
     {
         $projects = Auth::user()->projects()->get();
         $task = Task::find($id);
+        if(is_null($task)) {
+            abort(404);
+        }
+        if (Auth::user()->projects()->id !== $task->project_id) {
+            abort(403);
+        }
 
         return view('tasks.edit', [
             'projects' => $projects,
@@ -67,7 +75,6 @@ class TaskController extends Controller
     {
         // 選択中のタスクを取得
         $task = Task::find($id);
-
         $task->title = $request->title;
         $task->due_date = $request->due_date;
         $task->priority = $request->importance;
@@ -80,6 +87,9 @@ class TaskController extends Controller
     public function showRunForm(int $id)
     {
         $task = Task::find($id);
+        if(is_null($task)) {
+            abort(404);
+        }
         return view('tasks.run', [
             'task' => $task,
         ]);

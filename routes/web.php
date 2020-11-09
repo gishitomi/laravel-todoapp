@@ -22,22 +22,21 @@ Auth::routes();
 
 
 // ページ認証...ログインしていないとアクセスできないようにする
-Route::group(['middleware' => 'auth'], function() {
-// インデックス
-Route::get('/projects/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');
-// プロジェクト作成
-Route::get('/projects/create','App\Http\Controllers\ProjectController@showCreateForm')->name('projects.create');
-Route::post('/projects/create', 'App\Http\Controllers\ProjectController@create');
+Route::group(['middleware' => 'auth'], function () {
+    // インデックス
+    Route::get('/projects/tasks', 'App\Http\Controllers\TaskController@index')->name('tasks.index');
+    // プロジェクト作成
+    Route::get('/projects/create', 'App\Http\Controllers\ProjectController@showCreateForm')->name('projects.create');
+    Route::post('/projects/create', 'App\Http\Controllers\ProjectController@create');
 
-// タスク作成
-Route::get('/tasks/create', 'App\Http\Controllers\TaskController@showCreateForm')->name('tasks.create');
-Route::post('/tasks/create', 'App\Http\Controllers\TaskController@create');
+    // タスク作成
+    Route::get('/tasks/create', 'App\Http\Controllers\TaskController@showCreateForm')->name('tasks.create');
+    Route::post('/tasks/create', 'App\Http\Controllers\TaskController@create');
+    // タスク編集
+    Route::get('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@showEditForm')->name('tasks.edit');
+    Route::post('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@edit');
 
-// タスク編集
-Route::get('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@showEditForm')->name('tasks.edit');
-Route::post('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@edit');
-
-// タスク実行
-Route::get('/tasks/{id}/run', 'App\Http\Controllers\TaskController@showRunForm')->name('tasks.run');
-Route::post('/tasks/{id}/run', 'App\Http\Controllers\TaskController@run');
+    // タスク実行
+    Route::get('/tasks/{id}/run', 'App\Http\Controllers\TaskController@showRunForm')->name('tasks.run');
+    Route::post('/tasks/{id}/run', 'App\Http\Controllers\TaskController@run');
 });
