@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Project;
 use App\Models\Task;
+use App\Models\User;
 use App\Http\Requests\CreateTask;
 use App\Http\Requests\EditTask;
 use Illuminate\Http\Request;
@@ -16,18 +17,22 @@ class TaskController extends Controller
         // ユーザーの全てのプロジェクトを取得
         $projects = Auth::user()->projects()->get();
 
+        $project = Auth::user()->projects()->first();
+
         // 全てのタスクを取得
         $tasks = Task::all();
+        // $tasks = Auth::user()->with('projects.tasks')->get();
 
         return view('tasks/index', [
             'projects' => $projects,
+            'firstProject' => $project,
             'tasks' => $tasks,
         ]);
     }
 
     public function showCreateForm()
     {
-        $projects = Project::all();
+        $projects = Auth::user()->projects()->get();
 
         return view('tasks.create', [
             'projects' => $projects,
@@ -50,7 +55,7 @@ class TaskController extends Controller
 
     public function showEditForm(int $id)
     {
-        $projects = Project::all();
+        $projects = Auth::user()->projects()->get();
         $task = Task::find($id);
 
         return view('tasks.edit', [

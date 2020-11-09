@@ -20,7 +20,7 @@
                 <p>ようこそ、{{Auth::user()->name}}さん</p>
                 <form action="{{route('logout')}}" method="post">
                     @csrf
-                    <button type="submit" class="btn btn-dark">ログアウト</button>
+                    <button type="submit" class="btn btn-secondary">ログアウト</button>
                 </form>
                 @else
                 <a href="{{route('login')}}">

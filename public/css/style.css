@@ -51,6 +51,12 @@ header {
     width: 80%;
 }
 
+.new-project-make {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .add-project {
     font-size: 20px;
     color: tomato;
@@ -86,7 +92,6 @@ header {
     justify-content: space-around;
     margin: 40px auto;
     color: gray;
-    margin-bottom: 20px;
 }
 
 .counter {
@@ -106,8 +111,8 @@ h5 {
     width: 90%;
     color: gray;
     background-color: white;
-    margin: 0 auto;
-    margin-bottom: 20px;
+    margin: 20px auto;
+    margin-top: 60px;
 }
 
 .task-title {
@@ -133,7 +138,7 @@ h5 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 15%;
+    width: 260px;
 }
 
 .title,
@@ -189,4 +194,17 @@ a:hover {
     margin-bottom: 30px;
     color: gray;
     font-size: 20px;
+}
+
+@media screen and (max-width: 812px) {
+    header {
+        flex-direction: column-reverse;
+    }
+    .header-title {
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+    .header-right p {
+        font-size: 14px;
+    }
 }
