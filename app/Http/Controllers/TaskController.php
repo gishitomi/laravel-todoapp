@@ -18,7 +18,7 @@ class TaskController extends Controller
     {
         // ユーザーの全てのプロジェクトを取得
         $projects = Auth::user()->projects()->get();
-
+        // プロジェクトがすでに入っているか確認
         $project = Auth::user()->projects()->first();
 
         // 全てのタスクを取得
@@ -62,9 +62,6 @@ class TaskController extends Controller
         if(is_null($task)) {
             abort(404);
         }
-        if (Auth::user()->projects()->id !== $task->project_id) {
-            abort(403);
-        }
 
         return view('tasks.edit', [
             'projects' => $projects,
@@ -86,15 +83,19 @@ class TaskController extends Controller
     }
     public function showRunForm(int $id)
     {
+        // $project = Project::find($project_id);
         $task = Task::find($id);
         if(is_null($task)) {
             abort(404);
+        }
+        if (Auth::user()->projects()->value('id') !== $task->project_id) {
+            abort(403);
         }
         return view('tasks.run', [
             'task' => $task,
         ]);
     }
-    public function run(int $id, Request $request)
+    public function run(int $id,  Request $request)
     {
         // 選択中のタスクを取得
         $task = Task::find($id);

@@ -33,10 +33,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/tasks/create', 'App\Http\Controllers\TaskController@showCreateForm')->name('tasks.create');
     Route::post('/tasks/create', 'App\Http\Controllers\TaskController@create');
     // タスク編集
-    Route::get('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@showEditForm')->name('tasks.edit');
-    Route::post('/tasks/{id}/edit', 'App\Http\Controllers\TaskController@edit');
+    Route::get('projects/tasks/{id}/edit', 'App\Http\Controllers\TaskController@showEditForm')->name('tasks.edit');
+    Route::post('projects/tasks/{id}/edit', 'App\Http\Controllers\TaskController@edit');
 
     // タスク実行
-    Route::get('/tasks/{id}/run', 'App\Http\Controllers\TaskController@showRunForm')->name('tasks.run');
-    Route::post('/tasks/{id}/run', 'App\Http\Controllers\TaskController@run');
+    Route::get('projects/tasks/{id}/run', 'App\Http\Controllers\TaskController@showRunForm')->name('tasks.run');
+    Route::post('projects/tasks/{id}/run', 'App\Http\Controllers\TaskController@run');
 });
