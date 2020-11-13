@@ -49,6 +49,7 @@ header {
 .main-contents {
     background-color: whitesmoke;
     width: 80%;
+    overflow: auto;
 }
 
 .new-project-make {

@@ -35,7 +35,7 @@
                             <i class="far fa-pause-circle fa-2x run-btn"></i>
                         </div>
                         <!-- リセットボタン -->
-                        <div id="reset" class="opacity">
+                        <div id="reset" class="">
                             <i class="far fa-stop-circle fa-2x run-btn"></i>
                         </div>
                         <!-- 完了ボタン -->
@@ -56,7 +56,6 @@
             <a href="javascript:history.back()">
                 <button type="button" class="btn btn-outline-primary back-btn">戻る</button>
             </a>
-            <button type="button" class="btn btn-outline-danger btn-enter">終了</button>
         </div>
 
         <!-- Modal -->
