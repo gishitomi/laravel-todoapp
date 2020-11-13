@@ -65,7 +65,7 @@ start.addEventListener('click', function() {
     // runボタンとstopボタンの切り替え
     this.classList.add('hide');
     stop.classList.remove('hide');
-
+    reset.classList.remove('opacity');
     //再帰的に使えるように関数を作る
     countUp();
 })
@@ -75,6 +75,7 @@ stop.addEventListener('click', function() {
     // runボタンとstopボタンの切り替え
     this.classList.add('hide');
     start.classList.remove('hide');
+    reset.classList.add('opacity');
 
     // タイマーを止める
     clearTimeout(timerId);
@@ -98,10 +99,3 @@ done.addEventListener('click', function() {
     var taskTime = timer.textContent;
     document.getElementById('task_time').value = taskTime;
 })
-
-// var app = new Vue({
-//     el: '#app',
-//     data: [
-
-//     ]
-// })

@@ -40,3 +40,11 @@
 .hide {
     display: none;
 }
+
+.opacity {
+    opacity: 0;
+}
+
+.status {
+    padding-top: 9px;
+}

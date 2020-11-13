@@ -59,7 +59,7 @@
                             <button type="button" class="btn btn-lg btn-success">会員登録はこちら
                             </button>
                         </a>
-                        <a href="#">
+                        <a href="{{route('guest.login')}}">
                             <button type="button" class="btn btn-lg btn-dark">ゲストログイン</button>
                         </a>
 

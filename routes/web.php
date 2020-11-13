@@ -20,6 +20,10 @@ Route::get('/', 'App\Http\Controllers\HomeController@index')->name('home');
 // 会員登録・ログイン・ログアウト・パスワード再設定の各機能で必要なルーティング設定をすべて定義
 Auth::routes();
 
+// ゲストログイン
+ROute::get('/login/guest', 'App\Http\Controllers\Auth\LoginController@guestLogin')->name('guest.login');
+
+
 
 // ページ認証...ログインしていないとアクセスできないようにする
 Route::group(['middleware' => 'auth'], function () {

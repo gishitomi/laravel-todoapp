@@ -25,23 +25,27 @@
                     </p>
                 </div>
                 <div class="task-header-right">
-                    <!-- 実行ボタン -->
-                    <div id="start" class="run-active">
-                        <i class="far fa-play-circle fa-lg run-btn"></i>
+                    <div class="btns-box">
+                        <!-- 実行ボタン -->
+                        <div id="start" class="run-active">
+                            <i class="far fa-play-circle fa-2x run-btn"></i>
+                        </div>
+                        <!-- 停止ボタン -->
+                        <div id="stop" class="hide">
+                            <i class="far fa-pause-circle fa-2x run-btn"></i>
+                        </div>
+                        <!-- リセットボタン -->
+                        <div id="reset" class="opacity">
+                            <i class="far fa-stop-circle fa-2x run-btn"></i>
+                        </div>
+                        <!-- 完了ボタン -->
+                        <div id="done" data-toggle="modal" data-target="#exampleModalCenter">
+                            <i class="far fa-check-circle run-btn fa-2x"></i>
+                        </div>
                     </div>
-                    <!-- 停止ボタン -->
-                    <div id="stop" class="hide">
-                        <i class="far fa-pause-circle fa-lg run-btn"></i>
+                    <div class="status-box">
+                        <span class="badge status {{$task->status_class}}">{{$task->status_label}}</span>
                     </div>
-                    <!-- リセットボタン -->
-                    <div id="reset">
-                        <i class="far fa-stop-circle fa-lg run-btn"></i>
-                    </div>
-                    <!-- 完了ボタン -->
-                    <div id="done" data-toggle="modal" data-target="#exampleModalCenter">
-                        <i class="far fa-check-circle run-btn fa-lg"></i>
-                    </div>
-                    <span class="badge status {{$task->status_class}}">{{$task->status_label}}</span>
                 </div>
             </div>
         </div>
@@ -82,6 +86,5 @@
 @endsection
 
 @section('script')
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
 <script src="{{asset('js/timer.js')}}"></script>
 @endsection
