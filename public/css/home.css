@@ -1,17 +1,17 @@
 @charset "UTF-8";
 .home {
     height: 100vh;
-    background-image: url('../img/home-page.jpg');
+    background-image: url('../img/aaron-burden-o-ubWHV29Uk-unsplash.jpg');
     background-size: cover;
     margin: 0;
     padding: 0;
     position: relative;
+    filter: saturate(80%) contrast(110%);
 }
 
 .home-wrapper {
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom right, rgba(128, 0, 128, 0.75), rgba(255, 99, 71, 0.75));
 }
 
 .tomato {

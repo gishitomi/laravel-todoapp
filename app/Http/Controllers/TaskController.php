@@ -23,7 +23,6 @@ class TaskController extends Controller
 
         // 全てのタスクを取得
         $tasks = Task::all();
-        // $tasks = Auth::user()->with('projects.tasks')->get();
 
         return view('tasks/index', [
             'projects' => $projects,

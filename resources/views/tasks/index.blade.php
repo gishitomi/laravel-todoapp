@@ -25,7 +25,7 @@
             <!-- 今は未実装 -->
             <!-- <div class="done-tasks">
                 <div class="task-counter">
-                    <h4 class="counter">{{$tasks->where('project_id', )->count()}}</h4>
+                    <h4 class="counter">{{$tasks}}</h4>
                     <p>タスク数</p>
                 </div>
                 <div class="task-counter">
